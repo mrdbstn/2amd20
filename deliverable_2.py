@@ -6,39 +6,40 @@ Are some player’s valuation overexaggerated? (We can maybe look for outliers w
 Does valuation always hinge on players’ performance proportionally?
 Try coming up with some performance metrics and see the relationship between valuation and performance. 
 
-
 Hypothesis:
 - Players with higher goal-scoring rates have higher valuations (just an example, and easy to change)
 
 Performance metrics:
--Goals scored per game
--Assists per game
--Minutes played
--Matches starting eleven
--Number of matches team captain
--Clean sheets (for goalkeepers) (!!We can leave goalkeepers out, since their value evaluation metrics do not correspond to those of other player positions)
--Age 
--Position (except goalkeeper since those have no goal and little to no assists)
--Foot
--Height
+- Goals scored per game
+- Assists per game
+- Minutes played
+- Matches starting eleven
+- Number of matches team captain
+- Clean sheets (for goalkeepers) (!!We can leave goalkeepers out, since their value evaluation metrics do not correspond to those of other player positions)
+- Age 
+- Position (except goalkeeper since those have no goal and little to no assists)
+- Foot
+- Height
 
 Datasets needed:
--players.csv (to combine player-ids to actual names, birthcountry(?), age, position, foot, height, market value, highest market value)
--game_lineups.csv (to get whether the player was starting and if he was team captain (maybe redundant))
--appearances.csv (for each player appearance we get goals, assists, minutes_played)
--clubs.csv (to combine club-id to actual club names) (needed?)
+- players.csv (to combine player-ids to actual names, birthcountry(?), age, position, foot, height, market value, highest market value)
+- game_lineups.csv (to get whether the player was starting and if he was team captain (maybe redundant))
+- appearances.csv (for each player appearance we get goals, assists, minutes_played)
+- clubs.csv (to combine club-id to actual club names) (needed?)
 """
 
 #################################################
 ############## PREPROCESSING CODE ###############
 #################################################
 import pandas as pd
+import os
 
 # Load datasets
-players = pd.read_csv('archive/players.csv')
-lineups = pd.read_csv('archive/game_lineups.csv')
-appearances = pd.read_csv('archive/appearances.csv')
-clubs = pd.read_csv('archive/clubs.csv')
+cwd = os.path.dirname(__file__)
+players = pd.read_csv(cwd+'/archive/players.csv')
+lineups = pd.read_csv(cwd+'/archive/game_lineups.csv')
+appearances = pd.read_csv(cwd+'/archive/appearances.csv')
+clubs = pd.read_csv(cwd+'/archive/clubs.csv')
 
 """
 We can combine lineups with appearances, since those are match based and we add a number of appearances column to the players dataset
@@ -167,7 +168,6 @@ since those players are not included in the metrics dataset
 result_players_clean = result_players.dropna(axis=0, how='any')
 # print(result_players_clean.head(50))
 
-
-game_stats_cleaned.to_csv('clean/game_stats_cleaned.csv')
-result_players_clean.to_csv('clean/result_players_clean.csv')
-
+os.makedirs(cwd+'/clean', exist_ok=True)
+game_stats_cleaned.to_csv(cwd+'/clean/game_stats_cleaned.csv')
+result_players_clean.to_csv(cwd+'/clean/result_players_clean.csv')
