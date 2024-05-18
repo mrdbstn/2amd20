@@ -1,1 +1,1 @@
-The code from deliverable_2.py expects game_lineups.csv to be in the unzipped 'archive' folder, however since it was too big to push to github it was seperated.   
+To run the code, download the data contained in the `.zip` file from https://1drv.ms/u/s!Ak0hVUus1ejfp8kbsiAOGQybFLIo3w?e=TDVvF0, and extract it in to "./archive/".
