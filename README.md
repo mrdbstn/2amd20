@@ -1,1 +1,1 @@
-To run the code, download the data contained in the `.zip` file from https://1drv.ms/u/s!Ak0hVUus1ejfp8kbsiAOGQybFLIo3w?e=TDVvF0, and extract it in to "./archive/".
+To run the code, download the data contained in the `.zip` file from https://1drv.ms/u/s!Ak0hVUus1ejfp8kbsiAOGQybFLIo3w?e=TDVvF0, and extract it in to "./archive/". Run the notebook to obtain the clean data.
