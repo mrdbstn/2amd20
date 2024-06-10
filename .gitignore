@@ -1,3 +1,5 @@
 *.zip
 *.csv
 *.ttl
+/test_dir
+/extra_test_dir
