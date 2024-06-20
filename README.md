@@ -1,1 +1,1 @@
-Before running the code, download the data contained in the `.zip` file from https://1drv.ms/u/s!Ak0hVUus1ejfp8kbsiAOGQybFLIo3w?e=TDVvF0, and extract it into "./archive/". Run the notebook to obtain the cleaned data.
+Before running the code, download the CSV data files from [Kaggle](https://www.kaggle.com/datasets/davidcariboo/player-scores/data), and place them into "./archive/". Run the notebook to obtain the cleaned data.
